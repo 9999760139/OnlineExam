@@ -11,6 +11,7 @@ import Detailpage from "./pages/user/detailPage/Detailpage";
 import Infopage from "./pages/user/infopage/Infopage";
 import LiveTest from "./pages/user/livetest/LiveTest";
 import OTP from "./auth/OTP";
+import AdminLogin from "./pages/auth/AdminLogin";
 
 function App() {
   const [signed, setSigned] = useState(false);
@@ -24,6 +25,10 @@ function App() {
                 <Route
                   path="/manavrachna/login"
                   element={<LoginPage setSigned={setSigned} />}
+                />
+                <Route
+                  path="/manavrachna/admin/login"
+                  element={<AdminLogin setSigned={setSigned} />}
                 />
                 <Route path="/manavrachna/signup" element={<SignupPage />} />
                 <Route

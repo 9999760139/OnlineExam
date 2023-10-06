@@ -1,0 +1,117 @@
+body {
+ margin: 0;
+ padding: 0;
+ width: auto;
+ height: auto;
+}
+
+label,
+input {
+ display: block;
+}
+/* in otp file */
+.content {
+ justify-content: center;
+ text-align: center;
+ margin-top: 9%;
+ font-family: DM Sans;
+}
+.child_div {
+ width: 25%;
+}
+#partitioned {
+ padding-left: 15px;
+ letter-spacing: 42px;
+ border: 0;
+ background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+ background-position: bottom;
+ background-size: 50px 1px;
+ background-repeat: repeat-x;
+ background-position-x: 35px;
+ width: 220px;
+ outline: none;
+}
+#divInner {
+ left: 0;
+ position: sticky;
+}
+
+#divOuter {
+ width: 190px;
+ overflow: hidden;
+}
+
+h1 {
+ margin-bottom: -1%;
+}
+label {
+ font-size: x-small;
+ font-weight: 600;
+}
+p {
+ font-size: small;
+ font-weight: 400;
+}
+input {
+ height: 30px;
+ border: 1px solid grey;
+ border-radius: 4px;
+}
+
+/* NTIIN CSS */
+.login_heading {
+ font-family: "Marcellus";
+ font-style: normal;
+ font-weight: 800;
+ font-size: 36px;
+ line-height: 50px;
+ color: #1c1c1c;
+ margin-bottom: 0px;
+}
+.login_input_label {
+ font-family: "DM Sans";
+ font-style: normal;
+ font-weight: 500;
+ font-size: 22px;
+ line-height: 28px;
+ color: #1c1c1c;
+}
+.login_form {
+ width: 35%;
+}
+.signup_strong_pass_main_div {
+ margin-top: 10px;
+ display: flex;
+ /* justify-content: space-between; */
+ column-gap: 20px;
+}
+.signup_strong_pass_div {
+ height: 8px;
+ width: 30%;
+ border-radius: 10px;
+ background-color: greenyellow;
+}
+
+.otp_box {
+ width: 100%;
+}
+.verification_input_label {
+ text-align: left;
+ font-size: 15px;
+ font-weight: 400;
+ font-family: DM Sans;
+}
+.not_get_otp_div {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+@media (max-width:767px) {
+  .login_form{
+    width: 90%;
+  }
+  .child_div{
+    width: 90%;
+  }
+  
+}

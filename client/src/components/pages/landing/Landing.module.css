@@ -1,0 +1,129 @@
+.banner {
+ color: #ffffff;
+ height: 130px;
+ background-color: red; /* For browsers that do not support gradients */
+ background-image: linear-gradient(to right, rgb(34, 1, 123), rgb(0, 157, 255));
+ display: flex;
+ align-items: center;
+}
+.text {
+ width: 80%;
+ margin: auto;
+}
+.carousel_hdr {
+ display: flex;
+ justify-content: space-between;
+ width: 80%;
+ margin: 20px auto 5px auto;
+ align-items: center;
+}
+.total {
+ background-color: rgb(214, 214, 214);
+ border-radius: 50%;
+ width: 30px;
+ text-align: center;
+ font-size: 14px;
+}
+.total_tests {
+ display: flex;
+ column-gap: 1rem;
+ align-items: center;
+}
+.btns_views {
+ display: flex;
+ column-gap: 2rem;
+ align-items: center;
+}
+.test_plans {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ column-gap: 1rem;
+ width: 80%;
+ margin: auto;
+ padding: 0%;
+}
+.card__main {
+ cursor: pointer;
+ margin-top: 1rem;
+ max-width: 20%;
+ padding: 1rem;
+ border-radius: 0.7rem;
+ box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.title {
+ font-family: "Marcellus";
+ font-style: normal;
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 22px;
+ text-transform: capitalize;
+ color: #1c1c1c;
+ margin-bottom: 2rem;
+ margin-top: 0.2em;
+}
+.sub_info {
+ font-family: "Marcellus";
+ font-style: normal;
+ font-weight: 400;
+ font-size: 14px;
+ line-height: 22px;
+ text-transform: capitalize;
+ color: #1c1c1c;
+ margin: 0px;
+ padding: 0px;
+}
+.free {
+ font-family: "DM Sans";
+ font-style: normal;
+ font-weight: 700;
+ font-size: 18px;
+ line-height: 23px;
+ color: #1c1c1c;
+}
+.banner_title {
+ font-size: 25px;
+ font-family: "Mulish";
+ font-style: "normal";
+}
+.banner_subtitle {
+ font-size: 40px;
+ font-family: "Mulish";
+ font-style: "normal";
+}
+@media (max-width: 1024px) {
+ .card__main {
+  margin-top: 1rem;
+  max-width: 43%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+ }
+}
+
+@media (max-width: 767px) {
+ .card__main {
+  margin-top: 1rem;
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+ }
+ .banner_title {
+  font-size: 20px;
+  font-family: "Mulish";
+  font-style: "normal";
+ }
+ .banner_subtitle {
+  font-size: 30px;
+  font-family: "Mulish";
+  font-style: "normal";
+ }
+ .test_plans {
+    width: 90%;
+ }
+ .carousel_hdr {
+    width: 90%;
+ }
+}

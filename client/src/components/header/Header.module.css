@@ -1,0 +1,15 @@
+.appbar_main{
+    padding-top: 1re,;
+    margin: auto;
+    width: 80%;
+    box-shadow: none;
+}
+.logo_div{
+    margin-right: 1rem;
+}
+@media (max-width:767px) {
+    .appbar_main{
+        width: 100%;
+    }
+    
+}

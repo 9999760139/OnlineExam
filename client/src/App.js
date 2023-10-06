@@ -1,17 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Question1 from "./components/question/Question1";
 import Layout from "./components/layout/Layout";
 import { Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Landing from "./components/pages/landing/Landing";
-import Detailpage from "./components/pages/detailPage/Detailpage";
-import Infopage from "./components/pages/infopage/Infopage";
-import LiveTest from "./components/pages/livetest/LiveTest";
-import LoginPage from "./components/pages/LoginPage";
-import MobileVarification from "./components/pages/MobileVarification";
-import OTP from "./components/pages/OTP";
-import SignupPage from "./components/pages/SignupPage";
+import LoginPage from "./auth/LoginPage";
+import SignupPage from "./auth/SignupPage";
+import MobileVarification from "./auth/MobileVarification";
+import Landing from "./pages/user/landing/Landing";
+import Detailpage from "./pages/user/detailPage/Detailpage";
+import Infopage from "./pages/user/infopage/Infopage";
+import LiveTest from "./pages/user/livetest/LiveTest";
+import OTP from "./auth/OTP";
 
 function App() {
   const [signed, setSigned] = useState(false);
@@ -19,7 +18,6 @@ function App() {
     <BrowserRouter>
       <Layout signed={signed}>
         <Suspense fallback={<div className="loading_div">loading...</div>}>
-          {/* <Question1 /> */}
           <Routes>
             {!signed && (
               <>

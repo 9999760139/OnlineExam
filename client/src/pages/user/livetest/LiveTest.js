@@ -28,9 +28,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import CheckIcon from "@mui/icons-material/Check";
-import Modals from "../../components/modals/Modal";
 import StarIcon from "@mui/icons-material/Star";
 import { useNavigate } from "react-router-dom";
+import Modals from "../components/modals/Modal";
 
 const LiveTest = () => {
   const navigate = useNavigate();

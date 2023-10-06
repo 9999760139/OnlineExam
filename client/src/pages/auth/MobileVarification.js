@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './MobileVefication.module.css'
 import { Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import Mobileinput from '../components/mobileinput/Mobileinput';
+import Mobileinput from '../pages/user/components/mobileinput/Mobileinput';
 // import PhoneInput from 'react-phone-number-input'
 
 

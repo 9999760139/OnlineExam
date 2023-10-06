@@ -10,9 +10,9 @@ import MobileVarification from "./MobileVarification";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-function LoginPage({setSigned}) {
+function SignupPage() {
   const location = useLocation();
-  const login_path = location.pathname.includes("/manavrachna/login");
+
   const [user, setUser] = useState({
     password: "",
     email: "",
@@ -36,18 +36,12 @@ function LoginPage({setSigned}) {
     }
   };
 
-  console.log(user)
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user.password.length < 8) {
       alert("Password must atleast 8 charcter");
-    } else if (user.email !== "adminuser01@gmail.com") {
-      alert("please enter valid mail id");
-    } else if (user.password !== "12345678") {
-      alert("please enter valid password");
     } else {
-        setSigned(true)
-      navigate("/");
+      navigate("/manavrachna/verification");
     }
   };
   return (
@@ -68,8 +62,8 @@ function LoginPage({setSigned}) {
         variant="h6"
         sx={{ fontFamily: "DM Sans", mt: 1, cursor: "pointer" }}
       >
-        New to Manavrachna ?
-        <span onClick={() => navigate("/manavrachna/signup")}> Sign up</span>
+        Already have an account ?
+        <span onClick={() => navigate("/manavrachna/login")}>Sign in</span>
       </Typography>
       <form
         onSubmit={handleSubmit}
@@ -82,7 +76,7 @@ function LoginPage({setSigned}) {
           //   className={styles.inputs}
           variant="outlined"
           type="email"
-          name="email"
+          name="biography"
           //   value={props.detail && props.detail.biography}
           placeholder="Enter Your Biography"
           onChange={handleChange}
@@ -185,6 +179,27 @@ function LoginPage({setSigned}) {
         <Typography variant="label" sx={{ fontFamily: "DM Sans", mt: 2 }}>
           Password stength is strong
         </Typography>
+
+        {/* <Link to={'/verification'}> */}
+        <div className="signup_strong_pass_main_div">
+          {user.passStrong === 3 ? (
+            <>
+              <div className="signup_strong_pass_div"></div>
+              <div className="signup_strong_pass_div"></div>
+              <div className="signup_strong_pass_div"></div>
+            </>
+          ) : user.passStrong === 2 ? (
+            <>
+              <div className="signup_strong_pass_div"></div>
+              <div className="signup_strong_pass_div"></div>
+            </>
+          ) : user.passStrong === 1 ? (
+            <div className="signup_strong_pass_div"></div>
+          ) : (
+            ""
+          )}
+        </div>
+
         <Button
           className="SignUpBtn"
           type="submit"
@@ -193,7 +208,7 @@ function LoginPage({setSigned}) {
           fullWidth
           variant="contained"
         >
-          Sign in
+          Sign Up
         </Button>
         {/* </Link> */}
       </form>
@@ -208,4 +223,4 @@ function LoginPage({setSigned}) {
   );
 }
 
-export default LoginPage;
+export default SignupPage;

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { MuiOtpInput } from "mui-one-time-password-input";
-import Timer from "../pages/user/components/modals/timer/Timer";
+import Timer from "../user/components/modals/timer/Timer";
 
 function OTP() {
   const [minutes, setMinutes] = useState(1);

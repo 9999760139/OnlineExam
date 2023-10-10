@@ -9,10 +9,11 @@ const Layout = ({ children, signed }) => {
   const location = useLocation().pathname;
 
   const paths = ["/test/live", "/test/info", "/manavrachna"];
+  console.log(location.includes("/admin/"), location);
   return (
     <>
       {signed ? (
-        paths.includes(location) ? (
+        paths.includes(location) || location.includes("/admin/") ? (
           children
         ) : (
           <>

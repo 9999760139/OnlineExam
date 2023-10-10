@@ -11,7 +11,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 function AdminLogin({ setSigned }) {
   const location = useLocation();
-  const login_path = location.pathname.includes("/manavrachna/login");
+  const login_path = location.pathname.includes("/manavrachna/admin/login");
   const [user, setUser] = useState({
     password: "",
     email: "",
@@ -38,7 +38,7 @@ function AdminLogin({ setSigned }) {
     e.preventDefault();
     if (user.password.length < 8) {
       alert("Password must atleast 8 charcter");
-    } else if (user.email !== "adminuser01@gmail.com") {
+    } else if (user.email !== "masteradmin01@gmail.com") {
       alert("please enter valid mail id");
     } else if (user.password !== "12345678") {
       alert("please enter valid password");

@@ -3,15 +3,16 @@ import "./App.css";
 import Layout from "./components/layout/Layout";
 import { Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./auth/LoginPage";
-import SignupPage from "./auth/SignupPage";
-import MobileVarification from "./auth/MobileVarification";
 import Landing from "./pages/user/landing/Landing";
 import Detailpage from "./pages/user/detailPage/Detailpage";
 import Infopage from "./pages/user/infopage/Infopage";
 import LiveTest from "./pages/user/livetest/LiveTest";
-import OTP from "./auth/OTP";
 import AdminLogin from "./pages/auth/AdminLogin";
+import LoginPage from "./pages/auth/LoginPage";
+import MobileVarification from "./pages/auth/MobileVarification";
+import OTP from "./pages/auth/OTP";
+import SignupPage from "./pages/auth/SignupPage";
+import Dashboard from "./pages/admin/dashboard/Dashboard";
 
 function App() {
   const [signed, setSigned] = useState(false);
@@ -22,13 +23,16 @@ function App() {
           <Routes>
             {!signed && (
               <>
-                <Route
-                  path="/manavrachna/login"
-                  element={<LoginPage setSigned={setSigned} />}
-                />
+                {/* ADMIN ROUTES START */}
                 <Route
                   path="/manavrachna/admin/login"
                   element={<AdminLogin setSigned={setSigned} />}
+                />
+
+                {/* ADMIN ROUTES END */}
+                <Route
+                  path="/manavrachna/login"
+                  element={<LoginPage setSigned={setSigned} />}
                 />
                 <Route path="/manavrachna/signup" element={<SignupPage />} />
                 <Route
@@ -44,6 +48,11 @@ function App() {
             )}
             {signed && (
               <>
+                <Route
+                  path="/admin/"
+                  element={<Dashboard setSigned={setSigned} />}
+                />
+                {/* ADMIN ROUTES END */}
                 <Route path="/" element={<Landing />} />
                 <Route path="/test/:id" element={<Detailpage />} />
                 <Route path="/test/info" element={<Infopage />} />

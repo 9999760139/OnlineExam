@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Layout from "./components/layout/Layout";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/user/landing/Landing";
 import Detailpage from "./pages/user/detailPage/Detailpage";
@@ -13,15 +13,22 @@ import MobileVarification from "./pages/auth/MobileVarification";
 import OTP from "./pages/auth/OTP";
 import SignupPage from "./pages/auth/SignupPage";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
+import useLocalStorage from "./utils/useLocationStorage";
 
 function App() {
   const [signed, setSigned] = useState(false);
+  useEffect(() => {
+    const token = useLocalStorage.getAdmin();
+    if (token) {
+      setSigned(true)
+    }
+  }, [])
   return (
     <BrowserRouter>
       <Layout signed={signed}>
         <Suspense fallback={<div className="loading_div">loading...</div>}>
           <Routes>
-            {!signed && (
+            {!signed ?
               <>
                 {/* ADMIN ROUTES START */}
                 <Route
@@ -42,23 +49,36 @@ function App() {
                 <Route path="/manavrachna/otp" element={<OTP />} />
                 <Route
                   path="*"
-                  element={<Navigate to="manavrachna/login" replace />}
+                  element={<Navigate to="/manavrachna/login" replace />}
                 />
               </>
-            )}
-            {signed && (
-              <>
-                <Route
-                  path="/admin/"
-                  element={<Dashboard setSigned={setSigned} />}
-                />
-                {/* ADMIN ROUTES END */}
-                <Route path="/" element={<Landing />} />
-                <Route path="/test/:id" element={<Detailpage />} />
-                <Route path="/test/info" element={<Infopage />} />
-                <Route path="/test/live" element={<LiveTest />} />
-              </>
-            )}
+              :
+              signed && useLocalStorage.getAdmin() ?
+                <>
+                  <Route
+                    path="/admin/"
+                    element={<Dashboard setSigned={setSigned} />}
+                  />
+                  <Route
+                    path="*"
+                    element={<Navigate to="/admin/" replace />}
+                  />
+                </>
+                :
+                <>
+                  {useLocalStorage.getAdmin ?
+                    <Route
+                      path="/admin/"
+                      element={<Dashboard setSigned={setSigned} />}
+                    />
+                    : ""}
+                  {/* ADMIN ROUTES END */}
+                  <Route path="/" element={<Landing />} />
+                  <Route path="/test/:id" element={<Detailpage />} />
+                  <Route path="/test/info" element={<Infopage />} />
+                  <Route path="/test/live" element={<LiveTest />} />
+                </>
+            }
           </Routes>
         </Suspense>
       </Layout>

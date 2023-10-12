@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import useLocalStorage from "../../utils/useLocationStorage";
 
 function AdminLogin({ setSigned }) {
   const location = useLocation();
@@ -44,6 +45,7 @@ function AdminLogin({ setSigned }) {
       alert("please enter valid password");
     } else {
       setSigned(true);
+      useLocalStorage.setAdmin("adminloginsuccessfully")
       navigate("/admin/");
     }
   };

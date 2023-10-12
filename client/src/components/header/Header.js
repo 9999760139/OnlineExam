@@ -20,7 +20,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from '../../utils/useLocationStorage';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -49,10 +50,12 @@ function Header(props) {
         setAnchorEl(null);
     };
 
-
+    const handleSignout = () => {
+        useLocalStorage.removeUser()
+    }
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 ,fontFamily:"DM Sans"}}>
+            <Typography variant="h6" sx={{ my: 2, fontFamily: "DM Sans" }}>
                 MRI
             </Typography>
             <Divider />
@@ -73,7 +76,7 @@ function Header(props) {
     return (
         <Box sx={{ display: 'flex' }} className={styles.appbar_main}>
             <AppBar component="nav" color='inherit' position="static" sx={{ boxShadow: "none" }}>
-               
+
                 <Toolbar >
                     <IconButton
                         color="inherit"
@@ -87,20 +90,20 @@ function Header(props) {
                     <div sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} className={styles.logo_div}>
                         <img src='/img/logo.png' height='32px' width='70px' />
                     </div>
-                    <Box sx={{ flexGrow: 1, ml: '2',display: { xs: 'none', sm: 'block' }  }}>
+                    <Box sx={{ flexGrow: 1, ml: '2', display: { xs: 'none', sm: 'block' } }}>
 
                         <Button variant='outlined' sx={{ ml: '2' }}
                             startIcon={<DarkModeOutlinedIcon />}>Dark</Button>
                     </Box>
 
                     {auth && (
-                        <Box sx={{display: { xs: 'none', sm: 'block' }}}>
+                        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             <IconButton
                                 size="large"
                                 edge="start"
                                 color="inherit"
                                 aria-label="menu"
-                                sx={{ mr: 2,}}
+                                sx={{ mr: 2, }}
                             >
                                 <NotificationsNoneOutlinedIcon />
                             </IconButton>
@@ -130,8 +133,8 @@ function Header(props) {
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={()=>navigate("/manavrachna/login")}>Sign in</MenuItem>
-                                <MenuItem onClick={()=>navigate("/manavrachna/signup")}>Sign Up</MenuItem>
+                                <MenuItem onClick={handleSignout}>Sign out</MenuItem>
+                                <MenuItem onClick={() => navigate("/manavrachna/signup")}>Sign Up</MenuItem>
                             </Menu>
                         </Box>
                     )}

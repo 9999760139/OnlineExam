@@ -1,0 +1,23 @@
+
+.container{
+    background-color: #f6f6f6;
+    width: 80%;
+}
+.loader_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.end_col_auction{
+    display: flex;
+    justify-content: space-between;
+}
+.end_col_auction {
+    display: flex;
+    /* color: ; */
+    justify-content: space-around;
+}
+.buyer_flex{
+    display: flex;
+    justify-content: space-between;
+}

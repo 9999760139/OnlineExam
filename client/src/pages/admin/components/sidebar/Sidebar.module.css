@@ -1,0 +1,104 @@
+.sidebar_main {
+    color: black;
+    background-color: #665D6F;
+    opacity: 0.05;
+    box-shadow: 0px 0px 6.86721px rgba(0, 0, 0, 0.1);
+    border-radius: 4.12032px;
+    width: 211.51px;
+    /* height: 1522.46px; */
+    /* padding: 30px 0px; */
+    /* margin: 20px 50px; */
+}
+
+.sidebar_main>h2 {
+    padding: 0px 0px;
+    margin: 0px 26px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.sidebar_main>div {
+    background-color: white;
+    margin: 0px 8px 0px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+
+.sidebar_main>div>Button {
+
+    /* background: #1C1C1C; */
+    height: 41.2px;
+    border-radius: 2.06016px 0px 0px 2.06016px;
+}
+
+
+
+.demo {
+    background-color: #F6F6F6;
+    color: black;
+    /* opacity: 0.71; */
+    /* border: 0.549377px solid #1C1C1C; */
+    box-shadow: 0px 0px 6.86721px rgba(0, 0, 0, 0.1);
+    border-radius: 4.12032px;
+    width: 211.51px;
+    /* height: 1522.46px; */
+    padding: 30px 0px;
+    /* margin: 50px 50px; */
+}
+
+.demo_child_div {
+    display: flex;
+}
+
+.demo>h2 {
+    padding: 0px 0px;
+    margin: 0px 26px 28px 26px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+
+}
+
+.flex_start {
+    min-width: 3px;
+    background-color: #1C1C1C;
+    border-radius: 6.86721px;
+}
+
+.button_div_side{
+    width: 3px;
+    height: 44px;
+}
+
+.flex_btn {
+    /* background-color: #1C1C1C; */
+    Width: 172.28px;
+    Height: 41.2px;
+    margin: -4px 0px 0px 0px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* padding:-2px 0px; */
+}
+
+@media(max-width:600px) {
+    .demo {
+        display: none;
+    }
+}

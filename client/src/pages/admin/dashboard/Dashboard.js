@@ -11,44 +11,36 @@ import Tableheader from "../components/sidebar/tableHeader/Tableheader";
 
 const headData = [
   {
-    id: "customer_id",
-    label: "Customer ID",
-    format: (value) => value.toLocaleString(),
+    id: "paper_id",
+    label: "Paper ID",
   },
   {
-    id: "buyer_name",
-    label: "Buyer Name",
-    format: (value) => value.toLocaleString(),
+    id: "paper_name",
+    label: "Paper Name",
   },
   {
-    id: "email",
-    label: "Email",
-    // format: (value) => value.toLocaleString(),
+    id: "duration",
+    label: "Duration",
   },
   {
-    id: "country",
-    label: "Country",
-    format: (value) => value.toLocaleString(),
+    id: "total_question",
+    label: "Total Question",
   },
   {
-    id: "item",
-    label: "No. of items",
-    format: (value) => value.toLocaleString(),
+    id: "section",
+    label: "Sections",
   },
   {
     id: "newsletter",
     label: "Newsletter",
-    format: (value) => value.toLocaleString(),
   },
   {
     id: "contact",
     label: "Contact No.",
-    format: (value) => value.toLocaleString(),
   },
   {
     id: "action",
     label: "Action",
-    format: (value) => value.toLocaleString(),
   },
 ];
 const data = [
@@ -157,8 +149,8 @@ function Dashboard(props) {
         condition={condition}
         search={condition.search}
         // handleSearch={handleSearch}
-        // setOpen={setPopup} 
-        />
+        // setOpen={setPopup}
+      />
       <TableContainer
         component={Paper}
         sx={{ backgroundColor: "#F6F6F6", color: "black" }}
@@ -200,7 +192,11 @@ function Dashboard(props) {
           <TableBody>
             {data &&
               data.map((row) => (
-                <TableRow onClick={() => handleDelete(row)} style={{ color: "#636365", cursor: "pointer" }} key={row._id}>
+                <TableRow
+                  onClick={() => handleDelete(row)}
+                  style={{ color: "#636365", cursor: "pointer" }}
+                  key={row._id}
+                >
                   <TableCell
                     sx={{
                       fontFamily: "DM Sans",
@@ -334,7 +330,12 @@ function Dashboard(props) {
                       {row.is_blocked ? "Unblock" : "Block"}
                     </Button>
                     <IconButton>
-                      <img src="/img/delete.png" height="20px" width="18px" alt='img' />
+                      <img
+                        src="/img/delete.png"
+                        height="20px"
+                        width="18px"
+                        alt="img"
+                      />
                     </IconButton>
                   </TableCell>
                   {/* } */}
@@ -352,7 +353,6 @@ function Dashboard(props) {
   );
 }
 export default React.memo(Dashboard);
-
 
 // import React, { useState } from "react";
 // import styles from "./Dashboard.module.css";
